@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DECI Game", "DECI Game.pyproj", "{F8A53339-47E0-4DF2-A0AF-0ED8A699AACB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8A53339-47E0-4DF2-A0AF-0ED8A699AACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A53339-47E0-4DF2-A0AF-0ED8A699AACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DDEE434-B399-452A-98F4-C5786902EAAE}
+	EndGlobalSection
+EndGlobal
