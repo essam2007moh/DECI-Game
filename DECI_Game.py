@@ -1,0 +1,99 @@
+import random
+import time
+# This Game made by: Essam Mohammed Elkholy ECI 2
+# Define a function to play the game
+def play_game():
+    total_score = 0
+    print("Welcome to the game!")
+    print("Scenario 1: You're lost in the woods. Do you:")
+    print("1. Try to find your way back")
+    print("2. Stay put and wait for help")
+    print("3. Climb a tree to get a better view")
+    choice1 = input("Enter 1, 2, or 3: ")
+    if choice1 == "1":
+        print("You wander deeper into the woods and get even more lost.")
+        print("Scenario 2: You come across a river. Do you:")
+        print("1. Try to cross the river")
+        print("2. Follow the river downstream")
+        print("3. Build a raft to cross the river")
+        choice2 = input("Enter 1, 2, or 3: ")
+        if choice2 == "1":
+            print("You slip and fall in the river, but manage to swim to safety.")
+            total_score -= 10
+        elif choice2 == "2":
+            print("You follow the river downstream and eventually find a road.")
+            total_score += 20
+        elif choice2 == "3":
+            print("You build a raft and successfully cross the river.")
+            total_score += 30
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+    elif choice1 == "2":
+        print("You wait for help, but no one comes.")
+        total_score -= 20
+    elif choice1 == "3":
+        print("You climb a tree and spot a cabin in the distance. Do you:")
+        print("1. Head towards the cabin")
+        print("2. Stay put and wait for rescue")
+        print("3. Try to signal for help")
+        choice3 = input("Enter 1, 2, or 3: ")
+        if choice3 == "1":
+            print("You make your way to the cabin and find shelter.")
+            total_score += 40
+        elif choice3 == "2":
+            print("You wait for rescue, but it never comes.")
+            total_score -= 30
+        elif choice3 == "3":
+            print("You try to signal for help, but no one sees you.")
+            total_score -= 10
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+    else:
+        print("Invalid choice. Please enter 1, 2, or 3.")
+
+    return total_score
+
+# Define a function to print the game over message
+def game_over(total_score):
+    if total_score >= 50:
+        print("Congratulations! You survived and scored", total_score, "points.")
+    else:
+        print("Game over. You scored", total_score, "points.")
+
+# Define a function to ask the player if they want to play again
+def play_again():
+    choice = input("Do you want to play again? (y/n): ")
+    if choice.lower() == "y":
+        return True
+    elif choice.lower() == "n":
+        return False
+    else:
+        print("Invalid choice. Please enter y or n.")
+        return play_again()
+
+# Play the game multiple times and record the outcomes
+play_again_flag = True
+while play_again_flag:
+    outcomes = []
+    for i in range(3):
+        print("Game", i+1)
+        total_score = play_game()
+        outcomes.append(total_score)
+
+    # Print the recorded outcomes
+    print("Recorded outcomes:")
+    for outcome in outcomes:
+        print(outcome)
+
+    # Print the game over message
+    game_over(sum(outcomes))
+
+    # Ask the player if they want to play again
+    play_again_flag = play_again()
+
+# Add more randomness to the game
+random.seed(time.time())
+if random.random() < 0.5:
+    print("You hear a strange noise in the distance.")
+else:
+    print("You find a map that shows a shortcut out of the woods.")
